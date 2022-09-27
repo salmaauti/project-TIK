@@ -23,6 +23,8 @@ from fk.views import fk
 from fkip.views import fkip
 from ft.views import ft
 from pascasarjana.views import pascasarjana
+from universitas.views import universitas
+from profil.views import profil
 
 
 urlpatterns = [
@@ -35,5 +37,7 @@ urlpatterns = [
     path('fkip/', fkip, name="fkip"),
     path('ft/', ft, name="ft"),
     path('pascasarjana/', pascasarjana, name="pascasarjana"),
+    path('universitas/', universitas, name="universitas"),
+    path('profil/', profil, name="profil"),
 
 ]
