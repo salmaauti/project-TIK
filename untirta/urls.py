@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 from faperta.views import faperta
 from feb.views import feb
 from fh.views import fh
@@ -25,6 +27,9 @@ from ft.views import ft
 from pascasarjana.views import pascasarjana
 from universitas.views import universitas
 from profil.views import profil
+from dosen.views import dosen
+from mahasiswa.views import mahasiswa
+from tendik.views import tendik
 
 
 urlpatterns = [
@@ -39,5 +44,12 @@ urlpatterns = [
     path('pascasarjana/', pascasarjana, name="pascasarjana"),
     path('universitas/', universitas, name="universitas"),
     path('profil/', profil, name="profil"),
+    path('dosen/', dosen, name="dosen"),
+    path('mahasiswa/', mahasiswa, name="mahasiswa"),
+    path('tendik/', tendik, name="tendik"),
+
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

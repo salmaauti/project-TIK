@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOSEN</title>
+</head>
+<body>
+    
+    <nav>
+        <img src="\static\img\fk.png" height="80px">
+      <div class="logo">
+      </div> 
+      <ul>
+        <li><a href="/universitas">HOME</a></li>
+        <li><a href="/profil">PROFIL</a></li>
+        <li><a href="/faperta">FAPERTA</a></li>
+        <li><a href="/feb">FEB</a></li>
+        <li><a href="/fh">FH</a></li>
+        <li><a href="/fisip">FISIP</a></li>
+        <li><a href="/fk">FK</a></li>
+        <li><a href="/fkip">FKIP</a></li>
+        <li><a href="/ft">FT</a></li>
+        <li><a href="/pascasarjana">PASCASARJANA</a></li>
+        <li><a href="/dosen">DOSEN</a></li>
+        <li><a href="/mahasiswa">MAHASISWA</a></li>
+        <li><a href="/tendik">TENDIK</a></li>
+      </ul>
+    </nav>
+
+    
+</body>
+<br>
+<br>
+<br>
+<br>
+<body>
+    <center>
+    <font face="Aesthetic Violet">
+    <h1>Dosen Universitas Sultan Ageng Tirtayasa</h1>
+    </font>
+    </center>
+    <br>
+    </body>
+    
+    <center>
+    <table border="1">
+        <tr>
+            <tr bgcolor="#FF884B">
+            <th><font face="FuturaHandwritten">No</font></th>
+            <th><font face="FuturaHandwritten">NIP</font></th>
+            <th><font face="FuturaHandwritten">NAMA</font></th>
+            <th><font face="FuturaHandwritten">JABATAN</font></th>
+            <th><font face="FuturaHandwritten">FAKULTAS</font></th>
+            <th><font face="FuturaHandwritten">EMAIL</font></th>
+            <th><font face="FuturaHandwritten">FOTO</font></th>
+            </tr>
+        </tr>
+        
+            {% for dosen in lecturer %}
+            <tr>
+                <td><center><font face="FuturaHandwritten">{{dosen.no}}</font></center></td>
+                <td><center><font face="FuturaHandwritten">{{dosen.nip}}</font></center></td>
+                <td><font face="FuturaHandwritten">{{dosen.nama}}</font></td>
+                <td><center><font face="FuturaHandwritten">{{dosen.jabatan}}</font></center></td>
+                <td><center><font face="FuturaHandwritten">{{dosen.fakultas}}</font></center></td>
+                <td><center><font face="FuturaHandwritten">{{dosen.email}}</font></center></td>
+                <td>
+                    {% if dosen.foto %}
+                    <img src="{{ dosen.foto.url }}" width="100px">
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        
+    </table>
+    </center>
+    <br>
+    <br>
+    <br>
+</html>
+
+<style>
+    body {
+    background-image: linear-gradient(to right, #E3CAA5, #E3CAA5);
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0;
+}
+
+nav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid white;
+}
+
+.logo {
+    float: left;
+    height: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 20px 20px;
+    justify-content: space-around;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    line-height: 80px;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-family: monospace;
+}
+
+nav ul li a:hover {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}
+</style>
+

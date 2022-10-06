@@ -7,21 +7,99 @@
     <title>PROFIL</title>
 </head>
 <body>
+    
+    <nav>
+        <img src="\static\img\fk.png" height="80px">
+      <div class="logo">
+      </div> 
+      <ul>
+        <li><a href="/universitas">HOME</a></li>
+        <li><a href="/profil">PROFIL</a></li>
+        <li><a href="/faperta">FAPERTA</a></li>
+        <li><a href="/feb">FEB</a></li>
+        <li><a href="/fh">FH</a></li>
+        <li><a href="/fisip">FISIP</a></li>
+        <li><a href="/fk">FK</a></li>
+        <li><a href="/fkip">FKIP</a></li>
+        <li><a href="/ft">FT</a></li>
+        <li><a href="/pascasarjana">PASCASARJANA</a></li>
+        <li><a href="/dosen">DOSEN</a></li>
+        <li><a href="/mahasiswa">MAHASISWA</a></li>
+      </ul>
+    </nav>
+
+    
+</body>
+<br>
+<br>
+<br>
+<br>
+<body>
     <center>
-    <h1>PROFIL</h1>
+    <font face="Sketchzone" size="26">
+    <p>PROFIL</p>
+    </font>
     <img src="\static\img\profil.png" height="350px">
+    <font face="STZhongsong">
     <h3>Nama : Salma Putri Nabila</h3>
     <h3>NIM : 2225210034</h3>
     <h3>Jurusan : Pendidikan Matematika</h3>
     <h3>Alamat : Griya Cilegon Blok G2 No.21, Kec. Kramatwatu, Kab. Serang, Banten</h3>
+    </font>
     </center>
 </body>
 </html>
 
 <style>
     body {
-      background-image: linear-gradient(to right, #E3CAA5, #E3CAA5);
-      margin-left: 50px;
-      margin-right: 50px;
-      padding: 0;
-  }
+    background-image: linear-gradient(to right, #E3CAA5, #E3CAA5);
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0;
+}
+
+nav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid white;
+}
+
+.logo {
+    float: left;
+    height: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 20px 20px;
+    justify-content: space-around;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    line-height: 80px;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-family: monospace;
+}
+
+nav ul li a:hover {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}
+</style>
