@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAHASISWA</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
 </head>
 <body>
     
@@ -29,7 +33,7 @@
       </ul>
     </nav>
 
-</body>
+
 <br>
 <br>
 <br>
@@ -42,25 +46,34 @@
 </center>
 <br>
 </body>
-
+<center>
+    <a href="http://127.0.0.1:8000/tambah-mahasiswa/">
+    <img src="\static\img\tambah.png" height="200px"></a>
+    <font face="Chocolate Cookies">
+    <h1>Tambah Mahasiswa</h1>
+    </font>
+</center>
+<br>
+<br>
 <center>
 <table border="1">
     <tr>
         <tr bgcolor="#A1C298">
-        <th><font face="FuturaHandwritten">NO</font></th>
-        <th><font face="FuturaHandwritten">NIM</font></th>
-        <th><font face="FuturaHandwritten">NAMA</font></th>
-        <th><font face="FuturaHandwritten">TTL</font></th>
-        <th><font face="FuturaHandwritten">EMAIL</font></th>
-        <th><font face="FuturaHandwritten">FOTO</font></th>
+        <th><center><font face="FuturaHandwritten">NO</font></th>
+        <th><center><font face="FuturaHandwritten">NIM</font></center></th>
+        <th><center><font face="FuturaHandwritten">NAMA</font></center></th>
+        <th><center><font face="FuturaHandwritten">TTL</font></center></th>
+        <th><center><font face="FuturaHandwritten">EMAIL</font></center></th>
+        <th><center><font face="FuturaHandwritten">FOTO</font></center></th>
+        <th><center><font face="FuturaHandwritten">ACTION</font></center></th>
         </tr>
     </tr>
     
         {% for mahasiswa in student %}
         <tr>
-            <td><center><font face="FuturaHandwritten">{{mahasiswa.no}}</font></center></td>
+            <td><center><font face="FuturaHandwritten">{{ mahasiswa.no }}</font></center></td>
             <td><center><font face="FuturaHandwritten">{{mahasiswa.nim}}</font></center></td>
-            <td><font face="FuturaHandwritten">{{mahasiswa.nama}}</font></td>
+            <td><font face="FuturaHandwritten"><a href="{% url 'ubah_mahasiswa' mahasiswa.id %}">{{mahasiswa.nama}}</a></font></td>
             <td><center><font face="FuturaHandwritten">{{mahasiswa.ttl}}</font></center></td>
             <td><center><font face="FuturaHandwritten">{{mahasiswa.email}}</font></center></td>
             <td>
@@ -68,8 +81,14 @@
                 <img src="{{ mahasiswa.foto.url }}" width="100px">
                 {% endif %}
             </td>
+            <td>
+                <center>
+                <a href="{% url 'hapus_mahasiswa' mahasiswa.id %}" class="btn btn-danger">Hapus</a>
+                </center>
+            </td>
 
         </tr>
+        
         {% endfor %}
     
 </table>
@@ -77,6 +96,9 @@
 <br>
 <br>
 <br>
+    <script stype="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>  
+</body>
 </html>
 
 <style>

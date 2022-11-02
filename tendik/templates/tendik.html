@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOSEN</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     
@@ -28,9 +31,6 @@
         <li><a href="/tendik">TENDIK</a></li>
       </ul>
     </nav>
-
-    
-</body>
 <br>
 <br>
 <br>
@@ -43,15 +43,24 @@
     </center>
     <br>
     </body>
-    
+    <center>
+        <a href="http://127.0.0.1:8000/tambah-tendik/">
+        <img src="\static\img\tambah.png" height="200px"></a>
+        <font face="Chocolate Cookies">
+        <h1>Tambah Tendik</h1>
+        </font>
+    </center>
+    <br>
+    <br>
     <center>
     <table border="1">
         <tr>
             <tr bgcolor="#AEBDCA">
-            <th><font face="FuturaHandwritten">No</font></th>
-            <th><font face="FuturaHandwritten">NIP</font></th>
-            <th><font face="FuturaHandwritten">NAMA</font></th>
-            <th><font face="FuturaHandwritten">JABATAN</font></th>
+            <th><center><font face="FuturaHandwritten">No</font></center></th>
+            <th><center><font face="FuturaHandwritten">NIP</font></center></th>
+            <th><center><font face="FuturaHandwritten">NAMA</font></center></th>
+            <th><center><font face="FuturaHandwritten">JABATAN</font></center></th>
+            <th><center><font face="FuturaHandwritten">ACTION</font></center></th>
             </tr>
         </tr>
         
@@ -61,6 +70,12 @@
                 <td><center><font face="FuturaHandwritten">{{tendik.nip}}</font></center></td>
                 <td><font face="FuturaHandwritten">{{tendik.nama}}</font></td>
                 <td><center><font face="FuturaHandwritten">{{tendik.jabatan}}</font></center></td>
+                <td>
+                    <center>
+                    <a href="{% url 'hapus_tendik' tendik.id %}" class="btn btn-danger">Hapus</a>
+                    </center>
+                </td>
+                
             </tr>
             {% endfor %}
         
@@ -69,6 +84,9 @@
     <br>
     <br>
     <br>
+    <script stype="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
 </html>
 
 <style>

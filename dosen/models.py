@@ -12,4 +12,4 @@ class Dosen(models.Model):
     
 
     def __str__(self):
-        return self.no
+        return self.no 

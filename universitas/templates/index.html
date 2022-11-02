@@ -101,6 +101,33 @@
     <img src="\static\img\struktur-organisasi.png" height="350px">
     </center>
 </body>
+<body>
+    <center>
+    <font face="Aesthetic Violet">
+    <h1>Fakultas</h1>
+    </font>
+    </center>
+    <br>
+    </body>
+    
+    <center>
+    <table border="1">
+        <tr>
+            <tr bgcolor="#AEBDCA">
+            <th><font face="FuturaHandwritten">No</font></th>
+            <th><font face="FuturaHandwritten">NAMA</font></th>
+        </tr>
+        
+            {% for fakultas in faculty %}
+            <tr>
+                <td><center><font face="FuturaHandwritten">{{fakultas.no}}</font></center></td>
+                <td><font face="FuturaHandwritten">{{fakultas.nama}}</font></td> 
+            </tr>
+            {% endfor %}
+        
+    </table>
+    </center>
+    <br>
 </html>
 
 <style>
