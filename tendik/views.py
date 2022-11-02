@@ -57,4 +57,4 @@ def tambah_tendik(request):
             'form': form,
 
         }
-    return render(request, 'tambah-tendika.html', context)
+    return render(request, 'tambah-tendik.html', context)

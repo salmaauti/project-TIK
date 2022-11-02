@@ -83,9 +83,27 @@
             </td>
             <td>
                 <center>
-                <a href="{% url 'hapus_mahasiswa' mahasiswa.id %}" class="btn btn-danger">Hapus</a>
+                <button data-toggle="modal" data-target="#hapus-{{ mahasiswa.id }}" class="btn btn-danger">Hapus</button>
                 </center>
             </td>
+            <div class="modal" id="hapus-{{ mahasiswa.id }}">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <h3>Hapus</h3>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            Apakah anda yakin akan menghapus <strong>{{ mahasiswa.nama | upper }}</strong>?
+                        </div>
+                        <div class="modal-footer">
+                          <a href="{% url 'hapus_mahasiswa' mahasiswa.id %}" class="btn btn-danger">Hapus</a>
+                          <button class="btn btn-dark" data-dismiss="modal">Tidak</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </tr>
         

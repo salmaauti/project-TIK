@@ -45,7 +45,7 @@
     <br>
     </body>
     <center>
-        <a href="http://127.0.0.1:8000/tambah-dosen//">
+        <a href="http://127.0.0.1:8000/tambah-dosen/">
         <img src="\static\img\tambah.png" height="200px"></a>
         <font face="Chocolate Cookies">
         <h1>Tambah Dosen</h1>
@@ -83,9 +83,27 @@
                 </td>
                 <td>
                     <center>
-                    <a href="{% url 'hapus_dosen' dosen.id %}" class="btn btn-danger">Hapus</a>
+                    <button data-toggle="modal" data-target="#hapus-{{ dosen.id }}" class="btn btn-danger">Hapus</button>
                     </center>
                 </td>
+                <div class="modal" id="hapus-{{ dosen.id }}">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title">
+                                    <h3>Hapus</h3>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                Apakah anda yakin akan menghapus <strong>{{ dosen.nama | upper }}</strong>?
+                            </div>
+                            <div class="modal-footer">
+                              <a href="{% url 'hapus_dosen' dosen.id %}" class="btn btn-danger">Hapus</a>
+                              <button class="btn btn-dark" data-dismiss="modal">Tidak</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
             </tr>
             </tr>
